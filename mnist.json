@@ -1,0 +1,65 @@
+{
+    "dataset": {
+        "name": "mnist",
+        "path": "./root",
+        "resolution": 28
+    },
+    
+    "model": {
+        "in_channel": 1,
+        "height":28,
+        "ch": 32,
+        "channel_multiplier": [1, 2, 2],
+        "n_res_blocks": 2,
+        "mean_type": "eps",
+        "var_type": "fixedlarge",
+        "loss_type": "mse",
+        "dropout": 0.1,
+        "fold": 1,
+        "sde": {
+            "beta_min":0.1, 
+            "beta_max":20.0,
+            "T":1.0,
+            "t_epsilon":0.001
+        },
+    
+        "device": "cuda",
+        "precision": 32
+    }
+    ,
+    "training": {
+        "n_iter" : 50,
+        "optimizer": {
+            "type": "adam", 
+            "lr": 1e-4
+        },
+        "dataloader": {
+            "batch_size": 32,
+            "num_workers": 4,
+            "drop_last": true
+        }
+    }
+    ,
+    "validation": {
+        "dataloader": {
+            "batch_size": 32,
+            "num_workers": 4,
+            "drop_last": false
+        }
+    },
+    
+    "test": {
+        "dataloader": {
+            "batch_size": 32,
+            "num_workers": 4,
+            "drop_last": false
+        }
+    },
+
+    "evaluate": {
+        "wandb": false,
+        "log_every": 500,
+        "save_every": 5000,
+        "valid_every": 5000
+    }
+    }
