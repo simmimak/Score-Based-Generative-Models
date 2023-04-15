@@ -11,9 +11,6 @@
         "ch": 32,
         "channel_multiplier": [1, 2, 2],
         "n_res_blocks": 2,
-        "mean_type": "eps",
-        "var_type": "fixedlarge",
-        "loss_type": "mse",
         "dropout": 0.1,
         "fold": 1,
         "sde": {
@@ -54,12 +51,5 @@
             "num_workers": 4,
             "drop_last": false
         }
-    },
-
-    "evaluate": {
-        "wandb": false,
-        "log_every": 500,
-        "save_every": 5000,
-        "valid_every": 5000
     }
     }
