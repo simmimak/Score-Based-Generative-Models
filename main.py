@@ -203,7 +203,7 @@ class ScoreBasedDiffusion(pl.LightningModule):
 
         self.validation_step_outputs = []
 
-        return {'val_loss': avg_loss}
+        return {'val_loss': avg_loss ,'avg_bpd': all_bpd/all_items}
     
 
     def test_step(self, batch, batch_nb):
