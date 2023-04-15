@@ -129,27 +129,8 @@ def _calculate_correct_fan(tensor, mode):
 
 
 def kaiming_uniform_(tensor, gain=1., mode='fan_in'):
-    r"""Fills the input `Tensor` with values according to the method
-    described in `Delving deep into rectifiers: Surpassing human-level
-    performance on ImageNet classification` - He, K. et al. (2015), using a
-    uniform distribution. The resulting tensor will have values sampled from
-    :math:`\mathcal{U}(-\text{bound}, \text{bound})` where
-    .. math::
-        \text{bound} = \text{gain} \times \sqrt{\frac{3}{\text{fan\_mode}}}
-    Also known as He initialization.
-    Args:
-        tensor: an n-dimensional `torch.Tensor`
-        gain: multiplier to the dispersion
-        mode: either ``'fan_in'`` (default) or ``'fan_out'``. Choosing ``'fan_in'``
-            preserves the magnitude of the variance of the weights in the
-            forward pass. Choosing ``'fan_out'`` preserves the magnitudes in the
-            backwards pass.
-    Examples:
-        >>> w = torch.empty(3, 5)
-        >>> nn.init.kaiming_uniform_(w, mode='fan_in')
-    """
+  
     fan = _calculate_correct_fan(tensor, mode)
-    # gain = calculate_gain(nonlinearity, a)
     var = gain / max(1., fan)
     bound = math.sqrt(3.0 * var)  # Calculate uniform bounds from standard deviation
     with torch.no_grad():
@@ -178,16 +159,7 @@ def conv2d(in_planes, out_planes, kernel_size=(3, 3), stride=1, dilation=1, padd
 
 
 def get_sinusoidal_positional_embedding(timesteps: torch.LongTensor, embedding_dim: int):
-    """
-    Copied and modified from
-        https://github.com/hojonathanho/diffusion/blob/1e0dceb3b3495bbe19116a5e1b3596cd0706c543/diffusion_tf/nn.py#L90
-    From Fairseq in
-        https://github.com/pytorch/fairseq/blob/master/fairseq/modules/sinusoidal_positional_embedding.py#L15
-    Build sinusoidal embeddings.
-    This matches the implementation in tensor2tensor, but differs slightly
-    from the description in Section 3.5 of "Attention Is All You Need".
-    """
-    assert len(timesteps.size()) == 1
+   assert len(timesteps.size()) == 1
     timesteps = timesteps.to(torch.get_default_dtype())
     device = timesteps.device
 
