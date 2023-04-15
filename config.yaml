@@ -1,0 +1,22 @@
+program: "Path to main.py"
+method: grid
+metric:
+  name: val_loss
+  goal: minimize
+parameters:
+  learning_rate:
+    values: [0.01, 0.001]
+  optimizer:
+    values: ["adam", "sgd"]
+command:
+        - python3
+        - ${program}
+        - "--train"
+        - "--config"
+        - "Path to JSON file"
+        - "--ckpt_dir" 
+        - "ckptdir" 
+        - "--ckpt_freq"
+        - "25" 
+        - "--n_gpu"
+        - "4"
