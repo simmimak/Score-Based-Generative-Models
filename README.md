@@ -22,7 +22,8 @@ To run the code in this project, you need to have the following libraries instal
 3. Wandb - 0.14.2
 4. NumPy - 1.24.1
 
-** For tuning hyper-parameters** 
+**For tuning hyper-parameters** 
+
 W&B Sweeps can be defined in multiple ways:
 
 1. with a YAML file - best for distributed sweeps and runs from command line
