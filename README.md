@@ -1,4 +1,4 @@
-**Score-Based Generative Models on MNIST Dataset**
+**Score-Based Generative Models on MNIST Dataset using Pytorch Lightning**
 
 
 This project aims to implement score-based generative model paper(https://arxiv.org/pdf/2011.13456.pdf) on the MNIST dataset using the PyTorch Lightning framework. 
