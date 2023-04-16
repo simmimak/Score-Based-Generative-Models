@@ -17,11 +17,12 @@ The implementation involves the following steps:
 
 To run the code in this project, you need to have the following libraries installed:
 
-1. PyTorch
-2. PyTorch Lightning
-3. Wandb
-4. NumPy
+1. PyTorch - 2.0.0+cu118
+2. PyTorch Lightning - 2.0.1.post0
+3. Wandb - 0.14.2
+4. NumPy - 1.24.1
 
+   
 W&B Sweeps can be defined in multiple ways:
 
 1. with a YAML file - best for distributed sweeps and runs from command line
