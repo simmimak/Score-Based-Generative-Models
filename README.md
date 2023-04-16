@@ -29,7 +29,7 @@ W&B Sweeps can be defined in multiple ways:
 2. with a Python object - best for notebooks
 
 
-In this project we use a YAML file. You can refer to W&B documentation(https://docs.wandb.com/library/integrations/lightning) for more Pytorch-Lightning examples.
+In this project we use a YAML file. You can refer to W&B documentation (https://docs.wandb.com/library/integrations/lightning) for more Pytorch-Lightning examples.
 ```
 wandb sweep config.yaml
 ```
