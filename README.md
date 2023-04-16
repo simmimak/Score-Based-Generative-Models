@@ -1,7 +1,7 @@
 **Score-Based Generative Models on MNIST Dataset**
 
 
-This project aims to implement score-based generative models on the MNIST dataset using the PyTorch Lightning framework. 
+This project aims to implement score-based generative model paper(https://arxiv.org/pdf/2011.13456.pdf) on the MNIST dataset using the PyTorch Lightning framework. 
 
 
 The implementation involves the following steps:
@@ -28,13 +28,11 @@ W&B Sweeps can be defined in multiple ways:
 2. with a Python object - best for notebooks
 
 
-In this project we use a YAML file. You can refer to W&B documentation for more Pytorch-Lightning examples.
+In this project we use a YAML file. You can refer to W&B documentation(https://docs.wandb.com/library/integrations/lightning) for more Pytorch-Lightning examples.
 ```
-wandb sweep sweep.yaml
+wandb sweep config.yaml
 ```
 ```
 wandb agent <sweep_id> where <sweep_id> is given by previous command
 ```
-
-Visualize and compare the sweep runs
 
